@@ -10,7 +10,7 @@
       "source": "./plugin",
       "description": "Fluxos com portões, revisores, política de segurança e saídas enxutas de teste e lint.",
       "category": "productivity",
-      "version": "0.1.0"
+      "version": "0.1.1"
     }
   ]
 }
