@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "keel": {
+      "command": "node",
+      "args": ["${CLAUDE_PLUGIN_ROOT}/mcp/keel-mcp.mjs"],
+      "env": {
+        "KEEL_PROJETO": "${CLAUDE_PROJECT_DIR}"
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "name": "keel",
+  "description": "Marketplace do Keel: da feature/fix até o PR, os processos de uma equipe inteira dentro do Claude Code.",
+  "owner": {
+    "name": "Keel"
+  },
+  "plugins": [
+    {
+      "name": "keel",
+      "source": "./plugin",
+      "description": "Fluxos com portões, revisores, política de segurança e saídas enxutas de teste e lint.",
+      "category": "productivity",
+      "version": "0.1.0"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "name": "keel",
+  "displayName": "Keel",
+  "version": "0.1.0",
+  "description": "Da feature/fix até o PR: fluxos com portões, revisores, política de segurança e saídas enxutas, dentro do Claude Code.",
+  "author": {
+    "name": "Keel"
+  },
+  "license": "MIT",
+  "keywords": ["workflow", "review", "tests", "pr", "team"]
+}
