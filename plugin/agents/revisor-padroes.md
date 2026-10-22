@@ -17,7 +17,9 @@ Para cada arquivo alterado, compare com 1 ou 2 arquivos vizinhos do mesmo tipo (
 - nomes de arquivos, funções e variáveis no padrão do projeto;
 - uso das mesmas bibliotecas e utilitários já existentes, em vez de criar outros;
 - formato de erros, logs, respostas de API e testes igual ao do projeto;
-- convenções do perfil (branch, commits, organização).
+- convenções do perfil (branch, commits, organização);
+- restrições e instruções do time (`contexto_projeto` e o material): o que as contrariar é `bloqueante`,
+  com a regra `regra-do-time` e a instrução citada na explicação (aqui não precisa de arquivo vizinho).
 
 Consulte `buscar_aprendizados` e `contexto_projeto` (convenções do time) antes de comparar. `impacto_de`
 mostra os arquivos que já usam a peça alterada: bons candidatos a padrão. Só reporte divergência com evidência (cite o arquivo que serve de padrão na `explicacao`). Responda

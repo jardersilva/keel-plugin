@@ -51,8 +51,10 @@ de revisão, rode exatamente os revisores que o status pedir.
 
 ## 2. PLANEJAR (portão humano: `plano_aprovado`)
 
-- Use o agente **keel:planejador** com o pedido e o resumo do explorador.
-- Mostre ao usuário: objetivo, arquivos afetados, passos, riscos, estratégia de testes, tamanho.
+- Use o agente **keel:planejador** com o pedido, o resumo do explorador e as linhas "Restrições do time" e
+  "Instruções do time" do contexto, se houver.
+- Mostre ao usuário: objetivo, arquivos afetados, passos, riscos, estratégia de testes, restrições do time
+  (como o plano as respeita) e tamanho. Siga o plano aprovado nas etapas seguintes.
 - **Pare e espere a aprovação explícita.** Só depois de o usuário aprovar:
   `keel fluxo aprovar plano_aprovado --sessao ${CLAUDE_SESSION_ID}` e `keel fluxo avancar`.
 - Pedido de ajuste: revise o plano e mostre de novo.
@@ -83,6 +85,8 @@ de revisão, rode exatamente os revisores que o status pedir.
 
 - Monte o material da revisão: `git diff --stat` e o diff completo da branch em relação à base
   (se passar de ~1.500 linhas, envie a lista de arquivos e os trechos alterados mais relevantes).
+  Se o contexto da sessão tiver "Restrições do time" ou "Instruções do time", copie essas linhas no
+  material: os revisores conferem o diff contra elas.
 - Rode **em paralelo** os revisores da etapa, passando o material: os que `keel fluxo status` listar
   (no roteiro completo, **keel:revisor-seguranca**, **keel:revisor-qualidade** e
   **keel:revisor-padroes**). O portão só abre com a saída de todos eles.
@@ -131,6 +135,10 @@ resolvidos e pendências.
 
 - O Keel nunca cria arquivos de controle no repositório: estado e perfil ficam em `~/.keel`.
 - Bloqueio de política (hook): não tente contornar. Explique ao usuário; `/keel:porque` detalha.
+- **Restrições do time** (linha "Restrições do time" no contexto): o que estiver restrito (branch, commit,
+  push, PR) não é executado. Entregue ao usuário o nome da branch, a mensagem de commit ou o título e a
+  descrição do PR, e registre só o que ele informar (`keel fluxo commit <hash> --sessao ${CLAUDE_SESSION_ID}` ou
+  `keel fluxo pr <url> --sessao ${CLAUDE_SESSION_ID}`).
 - Se o usuário pedir para parar o fluxo: `keel fluxo abandonar --sessao ${CLAUDE_SESSION_ID}`.
 - Se o contexto avisar de um fluxo em andamento em outra sessão (ex.: depois de abrir outro terminal),
   pergunte ao usuário antes de iniciar um novo; para continuar o anterior:

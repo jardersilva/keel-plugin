@@ -52,7 +52,8 @@ envolvido. Sem passos para reproduzir ou comportamento esperado claro: pergunte 
 ## 3. DIAGNOSTICAR
 
 Isole a causa raiz (hipótese → verificação). Não corrija sintomas. Explique a causa ao usuário em
-2 a 4 frases. `keel fluxo avancar`.
+2 a 4 frases e, se o contexto tiver "Restrições do time" ou "Instruções do time", diga como a correção e a
+verificação vão respeitá-las (ex.: validar com typecheck se o build não pode rodar). `keel fluxo avancar`.
 
 ## 4. BRANCH (só na entrega por PR)
 
@@ -67,7 +68,8 @@ teste de reprodução. `keel fluxo avancar`.
 ## 6. REVISAR (portão: `revisao_registrada`)
 
 Os revisores que `keel fluxo status` listar para a etapa (no roteiro `fix`, **keel:revisor-seguranca**,
-**keel:revisor-qualidade** e **keel:revisor-padroes**) em paralelo sobre o diff, e depois `keel achados registrar --sessao ${CLAUDE_SESSION_ID}` com as saídas (heredoc,
+**keel:revisor-qualidade** e **keel:revisor-padroes**) em paralelo sobre o diff (com as linhas
+"Restrições do time" e "Instruções do time" do contexto, se houver), e depois `keel achados registrar --sessao ${CLAUDE_SESSION_ID}` com as saídas (heredoc,
 como no /keel:feature). `keel fluxo avancar`.
 
 ## 7. AJUSTAR (portões: `testes_verdes` e `sem_bloqueantes`)
@@ -82,5 +84,9 @@ Resolva os bloqueantes, rode `keel test` e uma revisão incremental dos trechos 
   `keel fluxo pr <url> --sessao ${CLAUDE_SESSION_ID}` e `keel fluxo avancar`.
 - **Entrega direta:** com confirmação do usuário, commit na branch atual (e push, se o time envia
   direto), `keel fluxo commit <hash> --sessao ${CLAUDE_SESSION_ID}` e `keel fluxo avancar`.
+- **Restrições do time** (linha "Restrições do time" no contexto): o que estiver restrito (branch, commit,
+  push, PR) não é executado. Entregue ao usuário o nome da branch, a mensagem de commit ou o título e a
+  descrição do PR, e registre só o que ele informar (`keel fluxo commit <hash> --sessao ${CLAUDE_SESSION_ID}` ou
+  `keel fluxo pr <url> --sessao ${CLAUDE_SESSION_ID}`).
 
 Resumo final: causa raiz, correção, o que prova a correção, link do PR ou hash do commit.

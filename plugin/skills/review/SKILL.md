@@ -13,7 +13,8 @@ Base informada: $ARGUMENTS (sem base: a branch principal do repo, `main` ou `mas
 1. Descubra o diff: `git merge-base HEAD <base>` e `git diff <merge-base>` (inclui o que não foi
    commitado). Sem mudanças: avise e encerre.
 2. Monte o material: `git diff --stat` e o diff. Acima de ~1.500 linhas, envie a lista de arquivos e os
-   trechos mais relevantes por arquivo.
+   trechos mais relevantes por arquivo. Inclua as linhas "Restrições do time" e "Instruções do time"
+   do contexto da sessão, se houver.
 3. Rode **em paralelo** os agentes **keel:revisor-seguranca**, **keel:revisor-qualidade** e
    **keel:revisor-padroes** com o material.
 4. Se houver fluxo ativo (`node "${CLAUDE_PLUGIN_ROOT}/cli/keel.mjs" fluxo status --sessao ${CLAUDE_SESSION_ID}`),

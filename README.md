@@ -1,7 +1,7 @@
 # Keel — plugin para o Claude Code
 
 Da feature/fix até o PR: fluxos com portões, revisores, política de segurança e saídas enxutas, dentro do
-Claude Code. Versão 0.1.2.
+Claude Code. Versão 0.1.3.
 
 ## Instalar
 

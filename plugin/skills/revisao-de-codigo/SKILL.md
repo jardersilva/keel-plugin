@@ -16,9 +16,14 @@ description: Checklist base de revisão de código do Keel e o formato JSON obri
 6. Legibilidade: nomes claros, funções curtas, sem duplicação desnecessária, segue o padrão do projeto.
 7. Operação: erros logados com contexto, timeouts em chamadas externas, nada que derrube em escala.
 
+8. Regras do time: se o material trouxer "Restrições do time" ou "Instruções do time" (ou o
+   `contexto_projeto` mostrar), confira o diff contra cada uma. Ex.: "não crie arquivos .md" e o diff
+   cria um `.md`. Use a regra `regra-do-time` e cite a instrução na explicação.
+
 **Severidade**
 
-- `bloqueante`: bug, falha de segurança, perda de dados, quebra de contrato, teste ausente para a mudança.
+- `bloqueante`: bug, falha de segurança, perda de dados, quebra de contrato, teste ausente para a mudança,
+  diff que contraria uma restrição ou instrução do time.
 - `importante`: problema real que deve ser corrigido ou justificado (performance, manutenção, borda).
 - `sugestao`: melhoria opcional.
 
