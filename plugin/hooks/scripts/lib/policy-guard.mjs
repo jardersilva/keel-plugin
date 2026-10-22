@@ -1,1 +1,1 @@
-import{d as o,h as r,j as a}from"./comum-SFBB2DZO.mjs";await r("policy-guard",o,a);
+import{d as o,h as r,j as a}from"./comum-FLKCZEC7.mjs";await r("policy-guard",o,a);
